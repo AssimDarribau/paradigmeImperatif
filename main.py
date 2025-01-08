@@ -16,15 +16,15 @@ def donnees():
 
 
 # Partie 2
-def calculer_moyenne(notes):
-    total = sum(notes)  
-    moyenne = total / len(notes)
+def clc_moyenne(notes):
+    total = sum(notes)  # Somme des notes
+    moyenne = total / len(notes)  # Moyenne
     return moyenne
 
 
 
 # Partie 3
-def afficher_repartition(noms, notes):
+def afficher(noms, notes):
     print("\nÉtudiants ayant réussi (note >= 10) :")
     for i in range(len(notes)):
         if notes[i] >= 10:
@@ -38,9 +38,9 @@ def afficher_repartition(noms, notes):
 
 
 # Partie 4
-def meilleure_note(noms, notes):
-    meilleure = max(notes)  
-    indice = notes.index(meilleure)  
+def meilleure_N(noms, notes):
+    meilleure = max(notes)  # Trouve la meilleure note
+    indice = notes.index(meilleure)  # Ou elle se trouve
     print(f"\nL’étudiant ayant la meilleure note est {noms[indice]} avec {meilleure}.")
 
 
@@ -50,12 +50,14 @@ def main():
     noms, notes = donnees()
 
     # Calcul de la moyenne
-    moyenne = calculer_moyenne(notes)
+    moyenne = clc_moyenne(notes)
     print(f"\nLa moyenne de la classe est de {moyenne}.")
 
-    afficher_repartition(noms, notes)
+    # Répartition des étudiants
+    afficher(noms, notes)
 
-    meilleure_note(noms, notes)
+    # Affichage de l’étudiant ayant la meilleure note
+    meilleure_N(noms, notes)
 
 
 if __name__ == "__main__":
